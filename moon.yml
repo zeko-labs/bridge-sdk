@@ -1,0 +1,79 @@
+layer: library
+fileGroups:
+  src:
+    - src/**/*
+    - tsconfig.json
+    - tsconfig.build.json
+    - tsdown.config.ts
+    - package.json
+  examples:
+    - examples/**/*
+tasks:
+  format:
+    inputs:
+      - "@globs(src)"
+  format-fix:
+    inputs:
+      - "@globs(src)"
+  build:
+    command: tsdown
+    deps:
+      - ^:build
+    inputs:
+      - "@globs(src)"
+    outputs:
+      - dist/**
+  lint:
+    command: biome lint
+    inputs:
+      - "@globs(src)"
+  lint-fix:
+    command: biome lint --fix --unsafe
+    inputs:
+      - "@globs(src)"
+  typecheck:
+    deps:
+      - ^:build
+    command: tsc --noEmit
+    inputs:
+      - "@globs(src)"
+  fetchOuterActions:
+    command: bun examples/fetchOuterActions.ts
+    options:
+      cache: false
+  fetchInnerActions:
+    command: bun examples/fetchInnerActions.ts
+    options:
+      cache: false
+  submitDeposit:
+    command: bun examples/submitDeposit.ts
+    options:
+      cache: false
+  finalizeDeposit:
+    command: bun examples/finalizeDeposit.ts
+    options:
+      cache: false
+  cancelDeposit:
+    command: bun examples/cancelDeposit.ts
+    options:
+      cache: false
+  submitWithdrawal:
+    command: bun examples/submitWithdrawal.ts
+    options:
+      cache: false
+  finalizeWithdrawal:
+    command: bun examples/finalizeWithdrawal.ts
+    options:
+      cache: false
+  canFinalizeDeposit:
+    command: bun examples/canFinalizeDeposit.ts
+    options:
+      cache: false
+  canFinalizeWithdrawal:
+    command: bun examples/canFinalizeWithdrawal.ts
+    options:
+      cache: false
+  canCancelDeposit:
+    command: bun examples/canCancelDeposit.ts
+    options:
+      cache: false

@@ -1,0 +1,47 @@
+{
+	"name": "@zeko-labs/bridge-sdk",
+	"version": "0.0.1",
+	"description": "Public TypeScript SDK for interacting with the Zeko bridge.",
+	"type": "module",
+	"keywords": [
+		"typescript",
+		"library"
+	],
+	"author": "Martin Ondejka <martin.ondejka@zeko.io>",
+	"contributors": [
+		"Martin Ondejka <martin.ondejka@zeko.io>",
+		"Emmanuel Donnet <emmanuel@zeko.io>"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zeko-labs/bridge-sdk.git"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": "./dist/index.js",
+		"./*": "./*"
+	},
+	"devDependencies": {
+		"@types/node": "^20.8.10",
+		"gql.tada": "1.8.13",
+		"tsdown": "0.13.4",
+		"typescript": "5.9.2"
+	},
+	"dependencies": {
+		"@zeko-labs/graphql": "^0.0.1",
+		"@urql/exchange-retry": "^1.3.0",
+		"o1js": "^2.8.0",
+		"urql": "^4.2.2",
+		"valibot": "^1.1.0"
+	},
+	"packageManager": "pnpm@10.16.1"
+}
