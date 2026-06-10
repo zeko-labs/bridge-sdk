@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=./cache/schemas/toolchains.json
+
+javascript:
+  packageManager: pnpm
+  syncPackageManagerField: true
+  dedupeOnLockfileChange: false
+
+node:
+  version: 24.5.0
+
+pnpm:
+  version: 10.16.1
+
+bun:
+  version: 1.2.22
+
+proto:
+  version: 0.55.3

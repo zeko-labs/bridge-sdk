@@ -1,0 +1,61 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "esnext",
+		"lib": ["ES2020"],
+		"types": ["node"],
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"isolatedDeclarations": false,
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"removeComments": false,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"plugins": [
+			{
+				"name": "gql.tada/ts-plugin",
+				"schemas": [
+					{
+						"name": "zeko",
+						"schema": "./src/graphql/generated/zeko.graphql",
+						"tadaOutputLocation": "./src/graphql/generated/zeko-env.d.ts",
+						"tadaTurboLocation": "./src/graphql/generated/zeko-cache.d.ts"
+					},
+					{
+						"name": "zeko-archive",
+						"schema": "./src/graphql/generated/zeko-archive.graphql",
+						"tadaOutputLocation": "./src/graphql/generated/zeko-archive-env.d.ts",
+						"tadaTurboLocation": "./src/graphql/generated/zeko-archive-cache.d.ts"
+					},
+					{
+						"name": "mina",
+						"schema": "./src/graphql/generated/mina.graphql",
+						"tadaOutputLocation": "./src/graphql/generated/mina-env.d.ts",
+						"tadaTurboLocation": "./src/graphql/generated/mina-cache.d.ts"
+					},
+					{
+						"name": "mina-archive",
+						"schema": "./src/graphql/generated/mina-archive.graphql",
+						"tadaOutputLocation": "./src/graphql/generated/mina-archive-env.d.ts",
+						"tadaTurboLocation": "./src/graphql/generated/mina-archive-cache.d.ts"
+					}
+				]
+			}
+		]
+	},
+	"include": ["src", "examples"],
+	"exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}
